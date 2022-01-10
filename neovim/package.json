@@ -1,0 +1,26 @@
+{
+  "name": "neovim-config",
+  "version": "1.0.0",
+  "description": "All dependency",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrisongomez/neovim-setup-javascript-developer.git"
+  },
+  "keywords": [
+    "dotfiles"
+  ],
+  "author": "Adrison Gomez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrisongomez/neovim-setup-javascript-developer/issues"
+  },
+  "homepage": "https://github.com/adrisongomez/neovim-setup-javascript-developer#readme",
+  "dependencies": {
+    "graphql-language-service-cli": "^3.1.13",
+    "pyright": "^1.1.157"
+  }
+}

@@ -1,0 +1,7 @@
+plugged/
+autoload/
+.netrwhist
+pack/
+undodir/
+
+.DS_Store
