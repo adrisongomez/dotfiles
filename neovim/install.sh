@@ -1,15 +1,43 @@
+#!/usr/bin/
 
-#!/usr/bin/env bash
-rm -rf ~/.config/nvim/setup
-mkdir -p ~/.config/nvim/setup
+# This script will create all the symbolic links needed to run neovim from the
+# source code in the current directory.
 
-ln -sf ~/dotfiles/neovim-config/init.vim ~/.config/nvim/init.vim
-ln -sf ~/dotfiles/neovim-config/setup/sets.vim ~/.config/nvim/setup/sets.vim
-ln -sf ~/dotfiles/neovim-config/setup/pluggins.vim ~/.config/nvim/setup/pluggins.vim
-ln -sf ~/dotfiles/neovim-config/setup/coc.vim ~/.config/nvim/setup/coc.vim
-ln -sf ~/dotfiles/neovim-config/setup/my.vim ~/.config/nvim/setup/my.vim
-ln -sf ~/dotfiles/neovim-config/setup/telescope.vim ~/.config/nvim/setup/telescope.vim
-ln -sf ~/dotfiles/neovim-config/setup/nerdtree.vim ~/.config/nvim/setup/nerdtree.vim
-ln -sf ~/dotfiles/neovim-config/setup/lsp.vim ~/.config/nvim/setup/lsp.vim
-ln -sf ~/dotfiles/neovim-config/setup/compe.lua ~/.config/nvim/setup/compe.lua
-ln -sf ~/dotfiles/neovim-config/setup/lush.lua ~/.config/nvim/setup/lush.lua
+echo "🕔 Start create symbolic links"
+
+echo "🏚  Removing old symbolic links"
+# Remove the old files if they exists
+rm -rf $HOME/.config/nvim
+
+function create_symbolic(){
+    source_path=$1
+    neovim_path=$2
+    for file in $(ls $source_path/*); do
+        if [ -f $file ]; then
+            filename=$(basename $file)
+            abs_path=$(realpath $file)
+            echo -e "   - 🔗 Creating symbolic link: $file"
+            ln -s "$abs_path" "$neovim_path/$filename"
+        fi
+    done
+}
+
+function create_folder(){
+    source_path="./lua/$1"
+    neovim_path="$HOME/.config/nvim/lua/$1"
+    echo -e "  - 🗂  Creating folder: $neovim_path"
+    mkdir -p $neovim_path
+}
+
+for file in $(ls ./lua)
+do
+    echo "- 🗂  Folder: $file"
+    create_folder $file
+    create_symbolic $source_path $neovim_path
+done
+
+# here we are going to auto genarate this file base on the lua files in dotfiles/lua
+ln -s $HOME/dotfiles/neovim/init.lua $HOME/.config/nvim/init.lua
+
+echo "✅ Finish job"
+echo "💻 😎 👾 Happy coding!"
