@@ -18,10 +18,20 @@ local function create_keymap(mod, keymap, fn)
 	map(mod, keymap, ":lua "..calling_telescope.."."..fn.."()<CR>")
 end
 
+
 create_keymap("n", "<Leader>ff", "find_files")
 create_keymap("n", "<Leader>fg", "live_grep")
 create_keymap("n", "<Leader>fb", "buffers")
 create_keymap("n", "<Leader>fh", "help_tags")
 
-map("n", "<Leader>fd", ":Telescope file_browser<CR>")
+map("n", "<Leader>fd", ":lua require('custom_finders.telescope.keymaps').open_file_browser()<CR>")
+
+local M = {}
+
+M.open_file_browser = function ()
+    local p = vim.fn.expand("%:p:h")
+    vim.cmd(":Telescope file_browser path="..p)
+end
+
+return M
 
