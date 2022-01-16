@@ -1,4 +1,6 @@
-local on_attach = function(client, bufnr)
+local M = {}
+
+M.on_attach = function(client, bufnr)
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
     end
@@ -35,6 +37,4 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
-return {
-    on_attach = on_attach
-}
+return M

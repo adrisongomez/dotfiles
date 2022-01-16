@@ -7,4 +7,3 @@ require('colors')
 require('status-line')
 require("lsp")
 require('finders')
-
