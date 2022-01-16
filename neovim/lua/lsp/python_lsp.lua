@@ -6,9 +6,10 @@ lsp[lsp_server_name].setup({
     on_attach = kb.on_attach,
     cmd = { "pyright-langserver", "--stdio" },
     filetypes = { "python" },
-    root_dir = function(startpath)
+--[[    root_dir = function(startpath)
         return M.search_ancestors(startpath, matcher)
       end,
+]]
     settings = {
       python = {
         analysis = {
