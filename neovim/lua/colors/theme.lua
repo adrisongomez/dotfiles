@@ -1,3 +1,8 @@
+--[[
+    This is file configuration for Lush theme.
+    Right now it still in progress.
+]]
+
 local lush = require("lush")
 local hsl = lush.hsl
 

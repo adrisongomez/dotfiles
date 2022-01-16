@@ -1,4 +1,8 @@
+
 local set = vim.opt
+
+vim.g.mapleader = " "
+
 -- general settings
 set.expandtab = true
 set.smarttab = true
@@ -42,4 +46,3 @@ set.swapfile = false
 -- special settings
 set.spell = true
 set.completeopt = 'menuone,noselect'
-

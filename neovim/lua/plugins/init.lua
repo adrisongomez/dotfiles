@@ -1,6 +1,9 @@
 require("packer").startup(function()
-    -- packer manager
+    -- Packer manager
     use 'wbthomason/packer.nvim'
+
+    -- General purpose plugins
+    use 'nvim-lua/plenary.nvim'
 
     -- themes
     use 'folke/tokyonight.nvim'
@@ -25,4 +28,8 @@ require("packer").startup(function()
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'onsails/lspkind-nvim'
+
+    -- Fuzzy finders
+    use 'nvim-telescope/telescope.nvim'
+
 end)
