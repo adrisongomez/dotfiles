@@ -1,4 +1,6 @@
-require("packer").startup(function()
+local packer = require("packer")
+local use = packer.use
+packer.startup(function()
     -- Packer manager
     use 'wbthomason/packer.nvim'
 
@@ -16,9 +18,11 @@ require("packer").startup(function()
             opt = true
         }
     }
-    
     -- Language server plugins
     use 'neovim/nvim-lspconfig'
+
+    -- LSP installer
+    use 'williamboman/nvim-lsp-installer'
 
     -- Autocomplete Plugins
     use 'hrsh7th/nvim-cmp'

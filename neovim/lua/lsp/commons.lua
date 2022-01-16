@@ -1,15 +1,21 @@
 local M = {}
 
-M.on_attach = function(client, bufnr)
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+M.capabiliteis = capabilities
+-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+
+M.on_attach = function(_, bufnr)
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
     end
+
 --     local function buf_set_option(...)
 --         vim.api.nvim_buf_set_option(bufnr, ...)
 --     end
 
---     -- Enable completion triggered by <c-x><c-o>
---     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- Mappings.
     local opts = {
