@@ -32,4 +32,8 @@ require("packer").startup(function()
     -- Fuzzy finders
     use 'nvim-telescope/telescope.nvim'
 
+    -- telescope extensions
+
+    use "nvim-telescope/telescope-file-browser.nvim"
+
 end)
