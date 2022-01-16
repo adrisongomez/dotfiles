@@ -1,1 +1,1 @@
-require".telescope"
+require"finders.telescope"
