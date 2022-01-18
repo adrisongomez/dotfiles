@@ -40,4 +40,11 @@ packer.startup(function()
 
     use "nvim-telescope/telescope-file-browser.nvim"
 
+
+    -- Neovim in the browser
+    use {
+        'glacambre/firenvim',
+        run = function() vim.fn['firenvim#install'](0) end
+    }
+
 end)
