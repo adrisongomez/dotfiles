@@ -1,4 +1,17 @@
 local M = {}
+local Job = require("plenary.job")
+
+function RefreshConfig ()
+    Job:new({
+      command = 'bash',
+      args = { 'install.sh' },
+      cwd = '~/dotfiles/neovim',
+      on_exit = function(j, return_val)
+          print(j, return_val)
+      end,
+    }):sync()
+    vim.cmd"luafile $MYVIMRC"
+end
 
 M.map = function(mod, keymap, rhs, opts)
     local options = {

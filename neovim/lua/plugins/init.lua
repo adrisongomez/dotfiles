@@ -24,6 +24,9 @@ packer.startup(function()
     -- LSP installer
     use 'williamboman/nvim-lsp-installer'
 
+    -- LSP Utils
+    use 'jose-elias-alvarez/null-ls.nvim'
+
     -- Autocomplete Plugins
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
