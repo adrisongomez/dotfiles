@@ -26,6 +26,7 @@ set.scrolloff = 5
 
 -- syntax highlighting
 set.relativenumber = true
+set.number = true
 set.cursorline = true
 
 set.hidden = true
