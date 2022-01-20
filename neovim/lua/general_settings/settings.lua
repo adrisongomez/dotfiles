@@ -45,5 +45,4 @@ set.undofile = true
 set.swapfile = false
 
 -- special settings
-set.spell = true
 set.completeopt = 'menuone,noselect'

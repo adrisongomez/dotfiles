@@ -18,9 +18,9 @@ local palette = {
 
 local theme = lush(function()
     return {
-        Normal { bg=palette.blue.dark },
-        Comment { fg=palette.blue.light.li(50), gui="bold" },
-        CursorLine {},
+        Normal = { bg=palette.blue.dark },
+        Comment = { fg=palette.blue.light.li(50), gui="bold" },
+        CursorLine = {},
         -- Visual {}
     }
 end)
