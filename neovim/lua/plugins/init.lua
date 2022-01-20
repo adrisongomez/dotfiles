@@ -1,5 +1,6 @@
 local packer = require("packer")
 local use = packer.use
+
 packer.startup(function()
     -- Packer manager
     use 'wbthomason/packer.nvim'
@@ -8,7 +9,9 @@ packer.startup(function()
     use 'nvim-lua/plenary.nvim'
 
     -- themes
-    use 'folke/tokyonight.nvim'
+    -- use 'folke/tokyonight.nvim'
+    -- use 'shaunsingh/nord.nvim'
+    use 'marko-cerovac/material.nvim'
 
     -- statusline
     use {
@@ -17,6 +20,10 @@ packer.startup(function()
             'kyazdani42/nvim-web-devicons',
             opt = true
         }
+    }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
     }
     -- Language server plugins
     use 'neovim/nvim-lspconfig'
