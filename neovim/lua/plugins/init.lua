@@ -9,23 +9,22 @@ packer.startup(function()
     use 'nvim-lua/plenary.nvim'
 
     -- themes
-    -- use 'folke/tokyonight.nvim'
-    -- use 'shaunsingh/nord.nvim'
     use 'marko-cerovac/material.nvim'
 
+    use { 'kyazdani42/nvim-web-devicons', opt = true }
+
+
     -- statusline
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = {
-            'kyazdani42/nvim-web-devicons',
-            opt = true
-        }
-    }
+    use 'nvim-lualine/lualine.nvim'
+
+    -- treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
     }
-    -- Language server plugins
+    use 'nvim-treesitter/highlight.lua'
+
+    -- LSP utillity
     use 'neovim/nvim-lspconfig'
 
     -- LSP installer
@@ -57,6 +56,15 @@ packer.startup(function()
 
     -- telescope extensions
     use "nvim-telescope/telescope-file-browser.nvim"
+
+    -- Trouble LSP
+    use {
+      "folke/trouble.nvim",
+      config = function()
+        require("trouble").setup {
+        }
+      end
+    }
 
 
 end)
