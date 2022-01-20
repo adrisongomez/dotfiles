@@ -31,5 +31,5 @@ require('lualine').setup({
     },
     tabline = {},
     extensions = {},
-    theme = 'tokyonight'
+    theme = 'material-nvim'
 })
