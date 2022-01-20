@@ -15,5 +15,9 @@ installer.on_server_ready(function(server)
         opts = vim.tbl_deep_extend("force", opts, require("lsp.settings.pyright"))
     end
 
+    if server.name == "tsserver" then
+        opts = vim.tbl_deep_extend("force", opts, require("lsp.settings.tsserver"))
+    end
+
     server:setup(opts)
 end)

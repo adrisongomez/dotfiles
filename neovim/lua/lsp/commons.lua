@@ -1,19 +1,13 @@
 local M = {}
 
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 M.capabiliteis = capabilities
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 
-M.on_attach = function(client, bufnr)
+M.on_attach = function(_, bufnr)
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
-    end
-
-    if client.name == "tsserver" then
-        client.resolved_capabilites.document_formatting = false
     end
 
 --     local function buf_set_option(...)

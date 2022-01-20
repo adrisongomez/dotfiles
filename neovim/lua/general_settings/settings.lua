@@ -40,8 +40,8 @@ set.ruler = true
 set.mouse = 'a'
 
 -- undofile
-set.undofile = true
 set.undodir = '/tmp/neovim/undofile'
+set.undofile = true
 set.swapfile = false
 
 -- special settings
