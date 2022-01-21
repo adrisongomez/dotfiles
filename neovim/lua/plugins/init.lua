@@ -7,12 +7,12 @@ packer.startup(function()
 
 	-- General purpose plugins
 	use("nvim-lua/plenary.nvim")
-    use("nvim-lua/popup.nvim")
+	use("nvim-lua/popup.nvim")
 
 	-- themes
 	use("marko-cerovac/material.nvim")
 
-    -- icons suppors
+	-- icons suppors
 	use({ "kyazdani42/nvim-web-devicons", opt = true })
 
 	-- statusline
@@ -32,22 +32,24 @@ packer.startup(function()
 	use("jose-elias-alvarez/null-ls.nvim")
 
 	-- Autocomplete Plugins
+	use("onsails/lspkind-nvim")
 	use("hrsh7th/nvim-cmp")
+	-- sources autocomplete
+	use("ray-x/cmp-treesitter")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
 	use("saadparwaiz1/cmp_luasnip")
-	use("onsails/lspkind-nvim")
-	use("ray-x/cmp-treesitter")
 
 	-- snippets
 	use("L3MON4D3/LuaSnip")
 	use("rafamadriz/friendly-snippets")
 
-	-- comments
+	-- utillity plugins
 	use("tpope/vim-commentary")
+	use("tpope/vim-surround")
 
 	-- telescope
 	use("nvim-telescope/telescope.nvim")
@@ -58,4 +60,10 @@ packer.startup(function()
 	use("sindrets/diffview.nvim")
 	use("tpope/vim-fugitive")
 	use("pwntester/octo.nvim")
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup()
+		end,
+	})
 end)
