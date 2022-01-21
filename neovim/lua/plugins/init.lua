@@ -24,6 +24,7 @@ packer.startup(function()
 		run = ":TSUpdate",
 	})
 	use("nvim-treesitter/highlight.lua")
+	use("nvim-treesitter/playground")
 
 	-- LSP utillity
 	use("neovim/nvim-lspconfig")
@@ -66,4 +67,5 @@ packer.startup(function()
 			require("nvim-autopairs").setup()
 		end,
 	})
+	-- sidebars is having conflig with autopairs
 end)
