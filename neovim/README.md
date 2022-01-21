@@ -5,8 +5,6 @@
 - Rest Client
 - Harpoon
 - Collapsing
-- Formatting
 - Add Pairs support
 - Surrounding
-- Git support
-
+- Delete linux icon in status line

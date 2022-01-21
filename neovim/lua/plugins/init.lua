@@ -7,10 +7,12 @@ packer.startup(function()
 
 	-- General purpose plugins
 	use("nvim-lua/plenary.nvim")
+    use("nvim-lua/popup.nvim")
 
 	-- themes
 	use("marko-cerovac/material.nvim")
 
+    -- icons suppors
 	use({ "kyazdani42/nvim-web-devicons", opt = true })
 
 	-- statusline
@@ -25,11 +27,8 @@ packer.startup(function()
 
 	-- LSP utillity
 	use("neovim/nvim-lspconfig")
-
-	-- LSP installer
+	use("folke/trouble.nvim")
 	use("williamboman/nvim-lsp-installer")
-
-	-- LSP Utils
 	use("jose-elias-alvarez/null-ls.nvim")
 
 	-- Autocomplete Plugins
@@ -50,17 +49,13 @@ packer.startup(function()
 	-- comments
 	use("tpope/vim-commentary")
 
-	-- Fuzzy finders
+	-- telescope
 	use("nvim-telescope/telescope.nvim")
-
-	-- telescope extensions
 	use("nvim-telescope/telescope-file-browser.nvim")
 
-	-- Trouble LSP
-	use({
-		"folke/trouble.nvim",
-		config = function()
-			require("trouble").setup({})
-		end,
-	})
+	-- Git integration
+	use("lewis6991/gitsigns.nvim")
+	use("sindrets/diffview.nvim")
+	use("tpope/vim-fugitive")
+	use("pwntester/octo.nvim")
 end)
