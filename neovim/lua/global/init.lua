@@ -1,1 +1,1 @@
-require"global.functions"
+require("global.functions")

@@ -1,18 +1,18 @@
 local M = {}
 
-M.cmd = { "pyright-langserver", "--stdio", }
+M.cmd = { "pyright-langserver", "--stdio" }
 
 M.filetypes = { "python" }
 
 M.settings = {
-  python = {
-    pythonPath= "python",
-    analysis = {
-      autoSearchPaths = true,
-      diagnosticMode = "workspace",
-      useLibraryCodeForTypes = true
-    }
-  }
+	python = {
+		pythonPath = "python",
+		analysis = {
+			autoSearchPaths = true,
+			diagnosticMode = "workspace",
+			useLibraryCodeForTypes = true,
+		},
+	},
 }
 
 M.single_file_support = true

@@ -1,4 +1,3 @@
-
 local set = vim.opt
 
 vim.g.mapleader = " "
@@ -8,7 +7,7 @@ set.expandtab = true
 set.smarttab = true
 set.shiftwidth = 4
 set.tabstop = 4
-set.fileencoding = 'utf-8'
+set.fileencoding = "utf-8"
 set.termguicolors = true
 set.title = true
 
@@ -32,17 +31,17 @@ set.cursorline = true
 set.hidden = true
 
 -- column
-set.signcolumn = 'yes'
-set.colorcolumn = '120'
+set.signcolumn = "yes"
+set.colorcolumn = "120"
 set.ruler = true
 
 -- mouse interaction
-set.mouse = 'a'
+set.mouse = "a"
 
 -- undofile
-set.undodir = '/tmp/neovim/undofile'
+set.undodir = "/tmp/neovim/undofile"
 set.undofile = true
 set.swapfile = false
 
 -- special settings
-set.completeopt = 'menuone,noselect'
+set.completeopt = "menuone,noselect"
