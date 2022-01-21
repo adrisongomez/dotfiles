@@ -1,1 +1,1 @@
-require "custom_finders.telescope"
+require("custom_finders.telescope")

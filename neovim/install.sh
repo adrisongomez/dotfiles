@@ -1,4 +1,4 @@
-#!/usr/bin/
+#! /bin/bash
 # This script will create all the symbolic links needed to run neovim from the
 # source code in the current directory.
 
@@ -10,13 +10,12 @@ echo "🏁 Creating symbolic links..."
 
 echo "👴🏽 Removing old symbolic links"
 # Remove the old files if they exists
-rm -rf $HOME/.config/nvim
+rm -rf "$HOME/.config/nvim"
 
 function create_folder(){
-    source_path="$base_path/$1"
     neovim_path="$neovim_home/lua/$1"
     echo -e "  - 🗂  Creating folder: $neovim_path"
-    mkdir -p $neovim_path
+    mkdir -p "$neovim_path"
 }
 
 function create_symbolic(){
@@ -28,10 +27,10 @@ function make_module(){
     module=$1
     module_path="$base_path/$module"
 
-    for curr_file in $(ls $module_path); do
+    for curr_file in `ls $module_path`; do
         curr_file_path="$module_path/$curr_file"
-        filename=$(basename $curr_file)
-        abs_path=$(realpath $curr_file_path)
+        filename=`basename $curr_file`
+        abs_path=`realpath $curr_file_path`
         
         # if the curr_file is a file, create a symbolic link to the file
         if test -f $curr_file_path; then

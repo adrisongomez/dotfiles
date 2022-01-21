@@ -5,7 +5,7 @@ M.cmd = { "typescript-language-server", "--stdio" }
 M.filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
 
 M.init_options = {
-  hostInfo = "neovim"
+	hostInfo = "neovim",
 }
 
 return M
