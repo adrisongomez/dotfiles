@@ -11,6 +11,7 @@ packer.startup(function()
 
 	-- themes
 	use("marko-cerovac/material.nvim")
+	use("projekt0n/github-nvim-theme")
 
 	-- icons suppors
 	use({ "kyazdani42/nvim-web-devicons", opt = true })
@@ -68,4 +69,21 @@ packer.startup(function()
 		end,
 	})
 	-- sidebars is having conflig with autopairs
+	use("NTBBloodbath/rest.nvim")
+	use({
+		"KadoBOT/nvim-spotify",
+		requires = "nvim-telescope/telescope.nvim",
+		config = function()
+			local spotify = require("nvim-spotify")
+
+			spotify.setup({
+				-- default opts
+				status = {
+					update_interval = 10000, -- the interval (ms) to check for what's currently playing
+					format = "%s %t by %a", -- spotify-tui --format argument
+				},
+			})
+		end,
+		run = "make",
+	})
 end)
