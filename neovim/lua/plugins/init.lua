@@ -94,4 +94,5 @@ packer.startup(function()
 			"kyazdani42/nvim-web-devicons", -- optional, for file icon
 		},
 	})
+	use("rinx/nvim-minimap")
 end)
