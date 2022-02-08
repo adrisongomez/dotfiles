@@ -6,7 +6,6 @@ vim.opt.background = "dark"
 
 vim.cmd([[
     " colorscheme material 
-
 ]])
 
 -- default on https://github.com/projekt0n/github-nvim-theme
