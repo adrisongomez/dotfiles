@@ -17,8 +17,10 @@ packer.startup(function()
 	use({ "kyazdani42/nvim-web-devicons", opt = true })
 
 	-- statusline
-	use("nvim-lualine/lualine.nvim")
-
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
 	-- treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -28,9 +30,8 @@ packer.startup(function()
 	use("nvim-treesitter/playground")
 
 	-- LSP utillity
-	use("neovim/nvim-lspconfig")
-	use("folke/trouble.nvim")
-	use("williamboman/nvim-lsp-installer")
+	use({ "neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer" })
+	use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
 	use("jose-elias-alvarez/null-ls.nvim")
 
 	-- Autocomplete Plugins
@@ -54,7 +55,7 @@ packer.startup(function()
 	use("tpope/vim-surround")
 
 	-- telescope
-	use("nvim-telescope/telescope.nvim")
+	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } })
 	use("nvim-telescope/telescope-file-browser.nvim")
 
 	-- Git integration
@@ -69,7 +70,7 @@ packer.startup(function()
 		end,
 	})
 	-- sidebars is having conflig with autopairs
-	use("NTBBloodbath/rest.nvim")
+	use({ "NTBBloodbath/rest.nvim", requires = { "nvim-lua/plenary.nvim" } })
 	use({
 		"KadoBOT/nvim-spotify",
 		requires = "nvim-telescope/telescope.nvim",
@@ -95,4 +96,20 @@ packer.startup(function()
 		},
 	})
 	use("rinx/nvim-minimap")
+
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
 end)
+
+vim.cmd([[
+    let g:minimap#default_auto_cmds_enabled = 1
+    let g:minimap#highlight#group = 1
+]])

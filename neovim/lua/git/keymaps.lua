@@ -1,13 +1,15 @@
 local map = require("global.functions").map
 
 -- Git-fugitive
-map('n', '<leader>gg', ':Git<CR>')
-map('n', '<leader>gp', ':Git push<CR>')
-map('n', '<leader>gf', ':Git push --force-with-lease<CR>')
-map('n', '<leader>gs', ':Git stash<CR>')
-map('n', '<leader>gb', ':Gitsigns blame_line<CR>')
-map('n', '<leader>gl', ':Git pull --rebase origin master<CR>')
-
+map("n", "<leader>gg", ":Git<CR>")
+map("n", "<leader>gpp", ":Git push<CR>")
+map("n", "<leader>gpf", ":Git push --force-with-lease<CR>")
+map("n", "<leader>gss", ":Git stash<CR>")
+map("n", "<leader>gsp", ":Git stash pop<CR>")
+map("n", "<leader>gb", ":Gitsigns blame_line<CR>")
+map("n", "<leader>gpl", ":Git pull<CR>")
+map("n", "<leader>gcc", ":Git commit -a<CR>")
+map("n", "<leader>gca", ":Git commit -a --amend --no-edit<CR>")
 
 -- Octo GitHub
-map('n', '<leader>ghpc', ':Octo pr create<CR>')
+map("n", "<leader>ghpc", ":Octo pr create<CR>")
