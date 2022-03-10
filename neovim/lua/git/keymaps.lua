@@ -13,3 +13,6 @@ map("n", "<leader>gca", ":Git commit -a --amend --no-edit<CR>")
 
 -- Octo GitHub
 map("n", "<leader>ghpc", ":Octo pr create<CR>")
+
+-- GitHub CLI
+map("n", "<leader>ghpw", ":! gh pr view -w<CR>")
