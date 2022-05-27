@@ -3,8 +3,6 @@
 -- Credit: glepnir
 local lualine = require("lualine")
 
-local status = require("nvim-spotify").status
-status:start()
 
 
 -- Color table for highlights
@@ -59,7 +57,7 @@ local config = {
 		lualine_z = {},
 		-- These will be filled later
 		lualine_c = {},
-		lualine_x = {status.listen},
+		lualine_x = {},
 	},
 	inactive_sections = {
 		-- these are to remove the defaults
