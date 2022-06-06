@@ -1,7 +1,7 @@
 plugged/
-autoload/
+.DS_Store
 .netrwhist
+autoload/
 pack/
 undodir/
-
-.DS_Store
+neovim/.DS_Store

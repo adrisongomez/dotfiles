@@ -11,9 +11,10 @@ null_ls.setup({
 		formatting.rubocop,
 		formatting.prettier,
 		diagnostics.eslint,
-		diagnostics.flake8.with({
-			extra_args = { "--select=E9,F63,F7,F82", "--max-line-length=127", "--max-complexity=10", "--exit-zero" },
-		}),
+        diagnostics.flake8,
+		-- diagnostics.flake8.with({
+		-- 	extra_args = { "--select=E9,F63,F7,F82", "--max-line-length=127", "--max-complexity=10", "--exit-zero" },
+		-- }),
 		diagnostics.luacheck,
 		diagnostics.shellcheck,
 		diagnostics.rubocop,
