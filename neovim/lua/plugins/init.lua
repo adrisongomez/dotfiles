@@ -33,6 +33,7 @@ packer.startup(function()
 	use({ "neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer" })
 	use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
 	-- use("jose-elias-alvarez/null-ls.nvim")
+    use({ "mhartington/formatter.nvim" })
 
 	-- Autocomplete Plugins
 	use("onsails/lspkind-nvim")
@@ -70,32 +71,7 @@ packer.startup(function()
 			require("nvim-autopairs").setup()
 		end,
 	})
-	-- sidebars is having conflig with autopairs
-	-- use({ "NTBBloodbath/rest.nvim", requires = { "nvim-lua/plenary.nvim" } })
-	-- use({
-	-- 	"KadoBOT/nvim-spotify",
-	-- 	requires = "nvim-telescope/telescope.nvim",
-	-- 	config = function()
-	-- 		local spotify = require("nvim-spotify")
 
-	-- 		spotify.setup({
-	-- 			-- default opts
-	-- 			status = {
-	-- 				update_interval = 10000, -- the interval (ms) to check for what's currently playing
-	-- 				format = "%s %t by %a", -- spotify-tui --format argument
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- 	run = "make",
-	-- })
-
-	-- -- File Tree
-	-- use({
-	-- 	"kyazdani42/nvim-tree.lua",
-	-- 	requires = {
-	-- 		"kyazdani42/nvim-web-devicons", -- optional, for file icon
-	-- 	},
-	-- })
 	use("rinx/nvim-minimap")
 
 	use({

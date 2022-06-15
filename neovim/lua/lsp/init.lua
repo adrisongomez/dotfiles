@@ -1,5 +1,6 @@
 require("lsp.autocomplete")
 require("lsp.keymap_trouble")
 require("lsp.installer")
+require("lsp.formatter")
 -- require("lsp.null_ls_settings")
 require("lsp.luasnip")
