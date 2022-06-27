@@ -33,7 +33,7 @@ packer.startup(function()
 	use({ "neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer" })
 	use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
 	-- use("jose-elias-alvarez/null-ls.nvim")
-    use({ "mhartington/formatter.nvim" })
+	use({ "mhartington/formatter.nvim" })
 
 	-- Autocomplete Plugins
 	use("onsails/lspkind-nvim")
@@ -84,6 +84,8 @@ packer.startup(function()
 			})
 		end,
 	})
+
+	-- use("ThePrimeagen/harpoon")
 end)
 
 vim.cmd([[
