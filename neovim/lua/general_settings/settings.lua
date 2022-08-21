@@ -45,7 +45,7 @@ set.swapfile = false
 
 -- special settings
 set.completeopt = "menuone,noselect"
-set.autread = true
+set.autoread = true
 
 -- settings per projects
 set.exrc = true

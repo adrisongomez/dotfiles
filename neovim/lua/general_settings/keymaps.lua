@@ -13,7 +13,6 @@ map("n", "Y", "y$")
 
 -- keeping in the center
 map("n", "n", "nzzzv")
-map("n", "N", "NZZZV")
 map("n", "J", "mzJ`z")
 
 -- undo breakpoints
