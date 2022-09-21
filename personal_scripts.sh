@@ -3,7 +3,9 @@
 function ow(){
     workspace_path="$HOME/GitHub/"
     selected_project=`ls $workspace_path | fzf`
-    cd "$workspace_path/$selected_project"
+    if [ -n "$selected_project" ]; then
+        cd "$workspace_path/$selected_project"
+    fi
 }
 
 
