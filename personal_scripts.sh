@@ -12,3 +12,5 @@ function ow(){
 function formatrdp(){
     git diff main..HEAD --name-only --diff-filter=AMR | grep .py$ | xargs autoflake8 --in-place --verbose
 }
+
+function code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
