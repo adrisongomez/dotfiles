@@ -14,3 +14,8 @@ function formatrdp(){
 }
 
 function code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
+
+function hasura_credentials() {
+    export HASURA_GRAPHQL_ADMIN_SECRET=$(kubectl get secrets/hasura-secret --namespace hasura -o json | jq --raw-output '.data.HASURA_GRAPHQL_ADMIN_SECRET | @base64d') && hasura console --endpoint $1
+}
