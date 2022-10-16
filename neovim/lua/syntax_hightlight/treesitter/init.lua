@@ -1,6 +1,7 @@
 local tree = require("nvim-treesitter.configs")
 
 tree.setup({
+    auto_install = true,
 	highlight = {
 		enable = true,
 	},
@@ -9,7 +10,3 @@ tree.setup({
 	},
 })
 
--- vim.cmd([[
---     set foldmethod=expr
---     set foldexpr=nvim_treesitter#foldexpr()
--- ]])
