@@ -16,3 +16,12 @@ map("n", "<leader>ghpc", ":Octo pr create<CR>")
 
 -- GitHub CLI
 map("n", "<leader>ghpw", ":! gh pr view -w<CR>")
+
+-- NEOVIM-DAP
+
+map("n", "<leader>jdt", ":lua require'dap'.toggle_breakpoint()")
+map("n", "<leader>jdr", ":lua require'dap'.continue()")
+map("n", "<leader>sto", ":lua require'dap'.step_over()")
+map("n", "<leader>sti", ":lua require'dap'.step_into()")
+map("n", "<leader>inr", ":lua require'dap'.repl.open()")
+
