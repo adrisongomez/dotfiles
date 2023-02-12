@@ -25,5 +25,16 @@ require("formatter").setup({
 		json = {
 			require("formatter.filetypes.json").fixjson,
 		},
+        go = {
+            require("formatter.filetypes.go").gofmt
+        },
+        grqphql = {
+            require("formatter.filetypes.graphql").prettier
+        },
+        css = {
+            require("formatter.filetypes.css").eslint_d,
+            require("formatter.filetypes.css").prettier,
+        },
+
 	},
 })

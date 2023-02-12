@@ -34,7 +34,7 @@ packer.startup(function()
 	use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
 	-- use("jose-elias-alvarez/null-ls.nvim")
 
-    -- Formatter
+	-- Formatter
 	use({ "mhartington/formatter.nvim" })
 
 	-- Autocomplete Plugins
@@ -79,15 +79,27 @@ packer.startup(function()
 	use({
 		"folke/which-key.nvim",
 		config = function()
-			require("which-key").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			})
+			require("which-key").setup({})
 		end,
 	})
 
 	-- use("ThePrimeagen/harpoon")
+	use("stevearc/dressing.nvim")
+	use({
+		"ziontee113/icon-picker.nvim",
+		config = function()
+			require("icon-picker").setup({
+				disable_legacy_commands = true,
+			})
+		end,
+	})
+
+	use("mfussenegger/nvim-dap")
+	use("folke/neodev.nvim")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use("leoluz/nvim-dap-go")
+    use("theHamsta/nvim-dap-virtual-text")
+    use("nvim-telescope/telescope-dap.nvim")
 end)
 
 vim.cmd([[
