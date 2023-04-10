@@ -1,26 +1,24 @@
-local installer = require("nvim-lsp-installer")
+local mason = require("mason")
+local masonConfig = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
 local common = require("lsp.commons")
 
-installer.setup({})
 
-for _, server in ipairs(installer.get_installed_servers()) do
-	local opts = {
-		on_attach = common.on_attach,
-		capabilities = common.capabilities,
-	}
+mason.setup()
+masonConfig.setup()
 
-	if server.name == "sumneko_lua" then
-		opts = vim.tbl_deep_extend("force", opts, require("lsp.settings.sumneko_lua"))
-	end
-
-	if server.name == "pyright" then
-		opts = vim.tbl_deep_extend("force", opts, require("lsp.settings.pyright"))
-	end
-
-	if server.name == "tsserver" then
-		opts = vim.tbl_deep_extend("force", opts, require("lsp.settings.tsserver"))
-	end
-
-	lspconfig[server.name].setup(opts)
-end
+masonConfig.setup_handlers{
+    function (server_name)
+        lspconfig[server_name].setup{
+            on_attach = common.on_attach,
+            capabilities = common.capabilities,
+        }
+    end,
+    ["tsserver"] = function ()
+        local opts = {
+            on_attach = common.on_attach,
+            capabilities = common.capabilities,
+        }
+        lspconfig.tsserver.setup( vim.tbl_deep_extend("force", opts, require("lsp.settings.tsserver")))
+    end,
+}

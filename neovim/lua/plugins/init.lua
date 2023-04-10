@@ -30,7 +30,8 @@ packer.startup(function()
 	use("nvim-treesitter/playground")
 
 	-- LSP utillity
-	use({ "neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer" })
+	use({ "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig" })
+	-- :MasonUpdate updates registry contents
 	use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
 	-- use("jose-elias-alvarez/null-ls.nvim")
 
@@ -60,7 +61,7 @@ packer.startup(function()
 
 	-- telescope
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } })
-	use("nvim-telescope/telescope-file-browser.nvim")
+	-- use("nvim-telescope/telescope-file-browser.nvim")
 
 	-- Git integration
 	use("lewis6991/gitsigns.nvim")
@@ -82,8 +83,8 @@ packer.startup(function()
 			require("which-key").setup({})
 		end,
 	})
-
-	-- use("ThePrimeagen/harpoon")
+	use("mbbill/undotree")
+	-- use({"ThePrimeagen/harpoon", requires="nvim-lua/plenary.nvim"})
 	use("stevearc/dressing.nvim")
 	use({
 		"ziontee113/icon-picker.nvim",
@@ -94,12 +95,14 @@ packer.startup(function()
 		end,
 	})
 
+	-- DAP Plugins
 	use("mfussenegger/nvim-dap")
 	use("folke/neodev.nvim")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	use("leoluz/nvim-dap-go")
-    use("theHamsta/nvim-dap-virtual-text")
-    use("nvim-telescope/telescope-dap.nvim")
+	use("theHamsta/nvim-dap-virtual-text")
+	use("nvim-telescope/telescope-dap.nvim")
+	use({ "jay-babu/mason-nvim-dap.nvim", requires = { "williamboman/mason.nvim" } })
 end)
 
 vim.cmd([[

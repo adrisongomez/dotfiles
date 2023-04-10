@@ -10,7 +10,7 @@ echo "🏁 Creating symbolic links..."
 
 echo "👴🏽 Removing old symbolic links"
 # Remove the old files if they exists
-rm -rf "$HOME/.config/nvim"
+rm -rf "$HOME/.config/nvim/lua"
 
 function create_folder(){
     neovim_path="$neovim_home/lua/$1"
