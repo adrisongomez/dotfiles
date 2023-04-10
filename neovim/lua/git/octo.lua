@@ -59,7 +59,7 @@ require"octo".setup({
       add_label = "<space>la",             -- add label
       remove_label = "<space>ld",          -- remove label
       goto_issue = "<space>gi",            -- navigate to a local repo issue
-      add_comment = "<space>ca",           -- add comment
+      add_comment = "<space>ca",           -- addsk-S6qomntMfRfZzP33G4HYT3BlbkFJrtUjLUZa6LrRwIH6HOjn comment
       delete_comment = "<space>cd",        -- delete comment
       next_comment = "]c",                 -- go to next comment
       prev_comment = "[c",                 -- go to previous comment

@@ -8,14 +8,12 @@ packer.startup(function()
 	-- General purpose plugins
 	use("nvim-lua/plenary.nvim")
 	use("nvim-lua/popup.nvim")
-	use({"nvim-tree/nvim-web-devicons"})
+	use("nvim-tree/nvim-web-devicons")
+	use("MunifTanjim/nui.nvim")
 
 	-- themes
 	-- use("marko-cerovac/material.nvim")
 	use("projekt0n/github-nvim-theme")
-
-	-- icons suppors
-	use({ "kyazdani42/nvim-web-devicons", opt = true })
 
 	-- statusline
 	use({
@@ -124,6 +122,20 @@ packer.startup(function()
 		},
 	})
 	use("echasnovski/mini.nvim")
+
+	-- AI and ChatGPT
+	use({ "github/copilot.vim" })
+	use({
+		"jackMort/ChatGPT.nvim",
+		config = function()
+			require("chatgpt").setup()
+		end,
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	})
 end)
 
 vim.cmd([[
