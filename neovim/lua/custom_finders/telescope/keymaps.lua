@@ -24,12 +24,17 @@ create_keymap("n", "<Leader>fb", "buffers")
 create_keymap("n", "<Leader>fh", "help_tags")
 
 map("n", "<Leader>fd", ":lua require('custom_finders.telescope.keymaps').open_file_browser()<CR>")
+map("n", "<Leader>fD", ":lua require('custom_finders.telescope.keymaps').open_file_browser_focus()<CR>")
 
 local M = {}
 
 M.open_file_browser = function()
+	require("nvim-tree.api").tree.toggle({ find_file = true, update_root= true, focus = true })
+end
+
+M.open_file_browser_focus = function()
 	local p = vim.fn.expand("%:p:h")
-	vim.cmd(":Telescope file_browser path=" .. p)
+	require("nvim-tree.api").tree.toggle({ find_file = true, path=p, focus = true })
 end
 
 return M

@@ -8,6 +8,7 @@ packer.startup(function()
 	-- General purpose plugins
 	use("nvim-lua/plenary.nvim")
 	use("nvim-lua/popup.nvim")
+	use({"nvim-tree/nvim-web-devicons"})
 
 	-- themes
 	-- use("marko-cerovac/material.nvim")
@@ -103,6 +104,26 @@ packer.startup(function()
 	use("theHamsta/nvim-dap-virtual-text")
 	use("nvim-telescope/telescope-dap.nvim")
 	use({ "jay-babu/mason-nvim-dap.nvim", requires = { "williamboman/mason.nvim" } })
+
+	-- file explorer
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional
+		},
+		config = function()
+			require("nvim-tree").setup({})
+		end,
+	})
+
+	use({
+		"antosha417/nvim-lsp-file-operations",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "kyazdani42/nvim-tree.lua" },
+		},
+	})
+	use("echasnovski/mini.nvim")
 end)
 
 vim.cmd([[
