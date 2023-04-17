@@ -136,6 +136,14 @@ packer.startup(function()
 			"nvim-telescope/telescope.nvim",
 		},
 	})
+
+	-- Test utillity runner
+	use({
+		"klen/nvim-test",
+		config = function()
+			require("nvim-test").setup()
+		end,
+	})
 end)
 
 vim.cmd([[

@@ -9,11 +9,15 @@ vim.keymap.set("n", "<leader>dc", ":lua require'dap'.repl.open()<CR>")
 vim.keymap.set("n", "<leader>ds", ":lua require('dapui').toggle()<CR>")
 
 require("mason-nvim-dap").setup({
-	automatic_installation = true,
+	handlers = {
+		function(config)
+			require("mason-nvim-dap").default_setup(config)
+		end,
+	},
 })
 
 require("neodev").setup({
-  library = { plugins = { "nvim-dap-ui" }, types = true },
+	library = { plugins = { "nvim-dap-ui" }, types = true },
 })
 
 require("dapui").setup()
