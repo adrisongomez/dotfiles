@@ -125,17 +125,6 @@ packer.startup(function()
 
 	-- AI and ChatGPT
 	use({ "github/copilot.vim" })
-	use({
-		"jackMort/ChatGPT.nvim",
-		config = function()
-			require("chatgpt").setup()
-		end,
-		requires = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-	})
 
 	-- Test utillity runner
 	use({
