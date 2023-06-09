@@ -12,7 +12,7 @@ packer.startup(function()
 	use("MunifTanjim/nui.nvim")
 
 	-- themes
-	-- use("marko-cerovac/material.nvim")
+	-- use("marko-cerovac/material.nvim")plugin
 	use("projekt0n/github-nvim-theme")
 
 	-- statusline
@@ -133,6 +133,13 @@ packer.startup(function()
 			require("nvim-test").setup()
 		end,
 	})
+    use({ "ray-x/lsp_signature.nvim",
+        config = function()
+            require("lsp_signature").setup()
+        end,
+    })
+
+	use({ "hrsh7th/cmp-nvim-lsp-signature-help" })
 end)
 
 vim.cmd([[

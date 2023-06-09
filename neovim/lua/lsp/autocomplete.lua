@@ -2,13 +2,6 @@ local cmp = require("cmp")
 local lspkind = require("lspkind")
 local luasnip = require("luasnip")
 
--- Extract from nvim-cmp README.md https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
-local has_words_before = function()
-	local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
-	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
-
-
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -27,18 +20,16 @@ cmp.setup({
 		["<CR>"] = cmp.mapping.confirm({
 			select = true,
 		}),
-		["<Tab>"] = cmp.mapping(function(fallback)
+		["<C-n>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()
-			elseif has_words_before() then
-				cmp.complete()
 			else
 				fallback()
 			end
 		end, { "i", "s" }),
-		["<S-Tab>"] = cmp.mapping(function(fallback)
+		["<C-p>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.jumpable(-1) then
@@ -54,21 +45,19 @@ cmp.setup({
 		{ name = "vsnip" },
 		{ name = "buffer" },
 		{ name = "treesitter" },
+        { name = 'nvim_lsp_signature_help' },
+        { name = 'path' },
 	}),
 	formatting = {
 		format = lspkind.cmp_format({
 			with_text = true,
 			menu = {
-				buffer = "[buff]",
-				nvim_lsp = "[lsp]",
+				buffer = "[BUFF]",
+				nvim_lsp = "[LSP]",
 				nvim_lua = "[API]",
-				path = "[path]",
+				path = "[PATH]",
 			},
 		}),
-	},
-	experimental = {
-		native_menu = false,
-		ghost_text = true,
 	},
 })
 

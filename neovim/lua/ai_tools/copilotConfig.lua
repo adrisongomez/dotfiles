@@ -1,5 +1,5 @@
-vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "<leader>ca", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+-- vim.g.copilot_no_tab_map = true
+-- vim.api.nvim_set_keymap("i", "<leader>fk", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 vim.keymap.set("n", "<leader>co", ":Copilot panel<CR>")
 
 -- vim.cmd[[
