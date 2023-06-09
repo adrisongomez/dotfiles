@@ -25,22 +25,21 @@ require("formatter").setup({
 		json = {
 			require("formatter.filetypes.json").fixjson,
 		},
-        yaml = {
-            require("formatter.filetypes.yaml").pyaml,
-        },
-        go = {
-            require("formatter.filetypes.go").gofmt
-        },
-        grqphql = {
-            require("formatter.filetypes.graphql").prettier
-        },
-        css = {
-            require("formatter.filetypes.css").eslint_d,
-            require("formatter.filetypes.css").prettier,
-        },
-        rust = {
-            require("formatter.filetypes.rust").rustfmt,
-        }
-
+		yaml = {
+			require("formatter.filetypes.yaml").pyaml,
+		},
+		go = {
+			require("formatter.filetypes.go").gofmt,
+		},
+		grqphql = {
+			require("formatter.filetypes.graphql").prettier,
+		},
+		css = {
+			require("formatter.filetypes.css").eslint_d,
+			require("formatter.filetypes.css").prettier,
+		},
+		rust = {
+			require("formatter.filetypes.rust").rustfmt,
+		},
 	},
 })

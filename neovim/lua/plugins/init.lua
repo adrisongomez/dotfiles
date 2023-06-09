@@ -32,7 +32,12 @@ packer.startup(function()
 	use({ "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig" })
 	-- :MasonUpdate updates registry contents
 	use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
-	-- use("jose-elias-alvarez/null-ls.nvim")
+	use({
+		"ray-x/lsp_signature.nvim",
+		config = function()
+			require("lsp_signature").setup()
+		end,
+	})
 
 	-- Formatter
 	use({ "mhartington/formatter.nvim" })
@@ -49,6 +54,7 @@ packer.startup(function()
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
 	use("saadparwaiz1/cmp_luasnip")
+	use({ "hrsh7th/cmp-nvim-lsp-signature-help" })
 
 	-- snippets
 	use("L3MON4D3/LuaSnip")
@@ -83,14 +89,9 @@ packer.startup(function()
 		end,
 	})
 	use("mbbill/undotree")
-	-- use({"ThePrimeagen/harpoon", requires="nvim-lua/plenary.nvim"})
-	use("stevearc/dressing.nvim")
-	use({
-		"ziontee113/icon-picker.nvim",
+	use("stevearc/dressing.nvim", {
 		config = function()
-			require("icon-picker").setup({
-				disable_legacy_commands = true,
-			})
+			require("dressing").setup()
 		end,
 	})
 
@@ -101,7 +102,11 @@ packer.startup(function()
 	use("leoluz/nvim-dap-go")
 	use("theHamsta/nvim-dap-virtual-text")
 	use("nvim-telescope/telescope-dap.nvim")
-	use({ "jay-babu/mason-nvim-dap.nvim", requires = { "williamboman/mason.nvim" } })
+	use({
+		"williamboman/mason.nvim",
+		"mfussenegger/nvim-dap",
+		"jay-babu/mason-nvim-dap.nvim",
+	})
 
 	-- file explorer
 	use({
@@ -121,7 +126,13 @@ packer.startup(function()
 			{ "kyazdani42/nvim-tree.lua" },
 		},
 	})
-	use("echasnovski/mini.nvim")
+	use({
+		"echasnovski/mini.nvim",
+		config = function()
+			require("mini.statusline").setup()
+			require("mini.tabline").setup()
+		end,
+	})
 
 	-- AI and ChatGPT
 	use({ "github/copilot.vim" })
@@ -133,13 +144,7 @@ packer.startup(function()
 			require("nvim-test").setup()
 		end,
 	})
-    use({ "ray-x/lsp_signature.nvim",
-        config = function()
-            require("lsp_signature").setup()
-        end,
-    })
-
-	use({ "hrsh7th/cmp-nvim-lsp-signature-help" })
+	-- use({ "ThePrimeagen/harpoon", requires = "nvim-lua/plenary.nvim" })
 end)
 
 vim.cmd([[

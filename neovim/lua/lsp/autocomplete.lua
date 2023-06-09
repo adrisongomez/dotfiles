@@ -2,6 +2,10 @@ local cmp = require("cmp")
 local lspkind = require("lspkind")
 local luasnip = require("luasnip")
 
+lspkind.init({
+    preset = 'codicons',
+})
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -50,6 +54,7 @@ cmp.setup({
 	}),
 	formatting = {
 		format = lspkind.cmp_format({
+            mode = 'text_symbol',
 			with_text = true,
 			menu = {
 				buffer = "[BUFF]",
