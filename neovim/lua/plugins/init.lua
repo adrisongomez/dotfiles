@@ -89,7 +89,8 @@ packer.startup(function()
 		end,
 	})
 	use("mbbill/undotree")
-	use("stevearc/dressing.nvim", {
+	use({
+		"stevearc/dressing.nvim",
 		config = function()
 			require("dressing").setup()
 		end,
@@ -102,11 +103,7 @@ packer.startup(function()
 	use("leoluz/nvim-dap-go")
 	use("theHamsta/nvim-dap-virtual-text")
 	use("nvim-telescope/telescope-dap.nvim")
-	use({
-		"williamboman/mason.nvim",
-		"mfussenegger/nvim-dap",
-		"jay-babu/mason-nvim-dap.nvim",
-	})
+	use("jay-babu/mason-nvim-dap.nvim")
 
 	-- file explorer
 	use({
@@ -141,7 +138,7 @@ packer.startup(function()
 	use({
 		"klen/nvim-test",
 		config = function()
-			require("nvim-test").setup()
+			require("nvim-test").setup({})
 		end,
 	})
 	-- use({ "ThePrimeagen/harpoon", requires = "nvim-lua/plenary.nvim" })

@@ -17,8 +17,8 @@ M.setup = function()
 	vim.opt.termguicolors = true
 	require("nvim-tree").setup()
 	require("lsp-file-operations").setup()
-	map("n", "<Leader>fD", ":lua require('file_tree').open_file_browser()<CR>")
-	map("n", "<Leader>fd", ":lua require('file_tree').open_file_browser_focus()<CR>")
+	map("n", "<Leader>fd", ":lua require('file_tree').open_file_browser()<CR>")
+	map("n", "<Leader>fD", ":lua require('file_tree').open_file_browser_focus()<CR>")
 end
 
 return M
