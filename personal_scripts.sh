@@ -2,9 +2,10 @@
 
 function ow(){
     workspace_path="$HOME/GitHub/"
-    selected_project=`ls $workspace_path | fzf`
+    project_path="$HOME/projects"
+    selected_project=`find $workspace_path $project_path -type d -maxdepth 1 | fzf`
     if [ -n "$selected_project" ]; then
-        cd "$workspace_path/$selected_project"
+        cd "$selected_project"
     fi
 }
 
