@@ -2,6 +2,8 @@ local packer = require("packer")
 local use = packer.use
 
 packer.startup(function()
+	-- Color Schema
+	use("ellisonleao/gruvbox.nvim")
 	-- Packer manager
 	use("wbthomason/packer.nvim")
 
@@ -72,15 +74,16 @@ packer.startup(function()
 	use("lewis6991/gitsigns.nvim")
 	use("sindrets/diffview.nvim")
 	use("tpope/vim-fugitive")
-	use("pwntester/octo.nvim")
+	use({
+		"ldelossa/gh.nvim",
+		requires = { { "ldelossa/litee.nvim" } },
+	})
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup()
 		end,
 	})
-
-	use("rinx/nvim-minimap")
 
 	use({
 		"folke/which-key.nvim",
