@@ -25,3 +25,8 @@ function formatblack(){
     # Format all the file not staged
     git status -s | sed -e s/M// | xargs -n1 black
 }
+
+# PROMPT='%(?:%{%}➜ :%{%}➜ ) %{%}%c%{%} $(git_prompt_info)'
+PROMPT=' %B%(?.%F{yellow}{%F{magenta}A%F{yellow}}.%F{red}?%?)%f%F{yellow}%b %B%F{cyan}%1~%f%b :: $(git_prompt_info)'
+RPROMPT='%*'
+
