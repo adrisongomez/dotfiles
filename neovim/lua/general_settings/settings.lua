@@ -1,7 +1,6 @@
 local set = vim.opt
 
 vim.g.mapleader = " "
-vim.g.python3_host_prog = '/Users/adrisongomez/miniconda3/bin/python'
 
 -- general settings
 set.expandtab = true
