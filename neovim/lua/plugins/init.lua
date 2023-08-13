@@ -144,10 +144,24 @@ packer.startup(function()
 			require("nvim-test").setup({})
 		end,
 	})
+	use("simrat39/symbols-outline.nvim")
+
 	-- use({ "ThePrimeagen/harpoon", requires = "nvim-lua/plenary.nvim" })
+
+	-- JavaScript Packamanger Helpers
+	use({
+		"vuki656/package-info.nvim",
+		requires = "MunifTanjim/nui.nvim",
+	})
+
+	-- golang helpers
+	use("ray-x/go.nvim")
+	use("ray-x/guihua.lua") -- recommended if need floating window support
 end)
 
 vim.cmd([[
     let g:minimap#default_auto_cmds_enabled = 1
     let g:minimap#highlight#group = 1
 ]])
+
+require("symbols-outline").setup()
