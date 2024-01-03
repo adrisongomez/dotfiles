@@ -50,3 +50,5 @@ set.autoread = true
 -- settings per projects
 set.exrc = true
 set.secure = true
+
+vim.g.python3_host_prog = "/opt/homebrew/bin/python3"

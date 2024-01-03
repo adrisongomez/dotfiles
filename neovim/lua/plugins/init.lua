@@ -157,6 +157,8 @@ packer.startup(function()
 	-- golang helpers
 	use("ray-x/go.nvim")
 	use("ray-x/guihua.lua") -- recommended if need floating window support
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
 end)
 
 vim.cmd([[
@@ -165,3 +167,22 @@ vim.cmd([[
 ]])
 
 require("symbols-outline").setup()
+local prettier = require("prettier")
+
+prettier.setup({
+  bin = 'prettier', -- or `'prettierd'` (v0.23.3+)
+  filetypes = {
+    "css",
+    "graphql",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "less",
+    "markdown",
+    "scss",
+    "typescript",
+    "typescriptreact",
+    "yaml",
+  },
+})
