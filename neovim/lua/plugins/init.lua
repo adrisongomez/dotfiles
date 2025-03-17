@@ -2,6 +2,13 @@ local packer = require("packer")
 local use = packer.use
 
 packer.startup(function()
+	use("CopilotC-Nvim/CopilotChat.nvim", {
+		requires = {
+			{ "github/copilot.vim" },
+			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+		},
+		build = "make tiktoken", -- Only on MacOS or Linux
+	})
 	-- Color Schema
 	use("ellisonleao/gruvbox.nvim")
 	-- Packer manager
@@ -99,14 +106,14 @@ packer.startup(function()
 		end,
 	})
 
-	-- DAP Plugins
-	use("mfussenegger/nvim-dap")
-	use("folke/neodev.nvim")
-	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
-	use("leoluz/nvim-dap-go")
-	use("theHamsta/nvim-dap-virtual-text")
-	use("nvim-telescope/telescope-dap.nvim")
-	use("jay-babu/mason-nvim-dap.nvim")
+	-- -- DAP Plugins
+	-- use("mfussenegger/nvim-dap")
+	-- use("folke/neodev.nvim")
+	-- use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	-- use("leoluz/nvim-dap-go")
+	-- use("theHamsta/nvim-dap-virtual-text")
+	-- use("nvim-telescope/telescope-dap.nvim")
+	-- use("jay-babu/mason-nvim-dap.nvim")
 
 	-- file explorer
 	use({
@@ -135,7 +142,7 @@ packer.startup(function()
 	})
 
 	-- AI and ChatGPT
-	use({ "github/copilot.vim" })
+	-- use({ "github/copilot.vim" })
 
 	-- Test utillity runner
 	use({
@@ -157,8 +164,8 @@ packer.startup(function()
 	-- golang helpers
 	use("ray-x/go.nvim")
 	use("ray-x/guihua.lua") -- recommended if need floating window support
-    use('jose-elias-alvarez/null-ls.nvim')
-    use('MunifTanjim/prettier.nvim')
+	use("jose-elias-alvarez/null-ls.nvim")
+	use("MunifTanjim/prettier.nvim")
 end)
 
 vim.cmd([[
@@ -170,19 +177,19 @@ require("symbols-outline").setup()
 local prettier = require("prettier")
 
 prettier.setup({
-  bin = 'prettier', -- or `'prettierd'` (v0.23.3+)
-  filetypes = {
-    "css",
-    "graphql",
-    "html",
-    "javascript",
-    "javascriptreact",
-    "json",
-    "less",
-    "markdown",
-    "scss",
-    "typescript",
-    "typescriptreact",
-    "yaml",
-  },
+	bin = "prettier", -- or `'prettierd'` (v0.23.3+)
+	filetypes = {
+		"css",
+		"graphql",
+		"html",
+		"javascript",
+		"javascriptreact",
+		"json",
+		"less",
+		"markdown",
+		"scss",
+		"typescript",
+		"typescriptreact",
+		"yaml",
+	},
 })

@@ -7,3 +7,7 @@ vim.keymap.set("n", "<leader>co", ":Copilot panel<CR>")
 --     let g:copilot_no_tab_map = v:true
 --     highlight CopilotSuggestion guifg=#555555 ctermfg=8
 -- ]]
+--
+require("CopilotChat").setup({
+    model = "o3-mini"
+})
