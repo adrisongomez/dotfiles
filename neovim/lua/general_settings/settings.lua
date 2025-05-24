@@ -52,3 +52,4 @@ set.exrc = true
 set.secure = true
 
 vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
+set.rtp = set.rtp + "/opt/homebrew/opt/fzf"

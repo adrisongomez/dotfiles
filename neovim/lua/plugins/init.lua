@@ -107,13 +107,17 @@ packer.startup(function()
 	})
 
 	-- -- DAP Plugins
-	-- use("mfussenegger/nvim-dap")
-	-- use("folke/neodev.nvim")
-	-- use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
-	-- use("leoluz/nvim-dap-go")
-	-- use("theHamsta/nvim-dap-virtual-text")
-	-- use("nvim-telescope/telescope-dap.nvim")
-	-- use("jay-babu/mason-nvim-dap.nvim")
+	use("mfussenegger/nvim-dap")
+	use("folke/neodev.nvim")
+	use({
+		"rcarriga/nvim-dap-ui",
+		requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+	})
+	use("leoluz/nvim-dap-go")
+	use("theHamsta/nvim-dap-virtual-text")
+	use("nvim-telescope/telescope-dap.nvim")
+	use("jay-babu/mason-nvim-dap.nvim")
+	use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
 
 	-- file explorer
 	use({
@@ -166,6 +170,19 @@ packer.startup(function()
 	use("ray-x/guihua.lua") -- recommended if need floating window support
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("MunifTanjim/prettier.nvim")
+
+	-- java helper
+	use("nvim-java/lua-async-await")
+	use("nvim-java/nvim-java-refactor")
+	use("nvim-java/nvim-java-core")
+	use("nvim-java/nvim-java-test")
+	use("nvim-java/nvim-java-dap")
+	-- use("mfussenegger/nvim-dap")
+	-- use("neovim/nvim-lspconfig")
+	-- use("MunifTanjim/nui.nvim")
+	-- use("williamboman/mason.nvim")
+	use("nvim-java/nvim-java")
+	use("JavaHello/spring-boot.nvim")
 end)
 
 vim.cmd([[
@@ -174,22 +191,22 @@ vim.cmd([[
 ]])
 
 require("symbols-outline").setup()
-local prettier = require("prettier")
+-- local prettier = require("prettier")
 
-prettier.setup({
-	bin = "prettier", -- or `'prettierd'` (v0.23.3+)
-	filetypes = {
-		"css",
-		"graphql",
-		"html",
-		"javascript",
-		"javascriptreact",
-		"json",
-		"less",
-		"markdown",
-		"scss",
-		"typescript",
-		"typescriptreact",
-		"yaml",
-	},
-})
+-- prettier.setup({
+-- 	bin = "prettier", -- or `'prettierd'` (v0.23.3+)
+-- 	filetypes = {
+-- 		"css",
+-- 		"graphql",
+-- 		"html",
+-- 		"javascript",
+-- 		"javascriptreact",
+-- 		"json",
+-- 		"less",
+-- 		"markdown",
+-- 		"scss",
+-- 		"typescript",
+-- 		"typescriptreact",
+-- 		"yaml",
+-- 	},
+-- })

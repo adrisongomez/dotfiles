@@ -6,6 +6,7 @@ lspkind.init({
     preset = 'codicons',
 })
 
+-- cmp.setup()
 cmp.setup({
 	snippet = {
 		expand = function(args)
